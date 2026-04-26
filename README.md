@@ -1,10 +1,87 @@
-# Project 1 DS4002 Group 10
+# Fake News Detection — Case Study
 
-## Contents
+A case study for 2nd year UVA Data Science students exploring how 
+machine learning can be used to classify news articles as fake or real.
 
-1: This repo contains Python Jupyter notebooks to perform analysis through clustering and classification on a large dataset of real and fake news. Packages used include Numpy, Scikitlearn, Scipy, Pandas, Matplotlib, Kagglehub and Seaborn. All code was run on mac and linux.
+## Overview
+Can a machine tell the difference between fake and real news? In this 
+case study you will explore a large dataset of news articles, uncover 
+patterns through EDA and clustering, and build classifiers to 
+automatically detect misinformation.
 
-2: The dataset is stored in the DATA directory, and all analysis notebooks are in the SCRIPTS directory. The SCRIPTS directory contains 2 notebooks, one for exploratory data analysis, and the other for modeling. There is a sub-directory, EXTRA_SCRIPTS, which contains scripts used in development but not used in the final analysis. The OUTPUTS folder contains all output plots from the analysis
+## Dataset
+**WELFake** is a dataset of 72,134 news articles (35,028 real, 37,106 fake) 
+sourced from four popular datasets — Kaggle, McIntire, Reuters, and 
+BuzzFeed Political — merged to improve generalization and reduce overfitting.
 
-3: To reproduce the results of this project, the user should run the notebook SCRIPTS/EDA_proj1.ipynb in a python notebook editor, and then run SCRIPTS/Modeling_Final.ipynb, to see the modeling approach taken. The EDA notebook covers how to read in the data from Kaggle, perform basic preprocessing operations, and look at trends between real and fake news articles. The Modeling notebook covers the process of vectorizing text data, clustering the vectorized text, and validating that clustering makes sense. The notebook also performs classification by cluster using logistic regression and linear SVC, and validates the significance of the results using a 1-sample t-test
+| Column | Description |
+|--------|-------------|
+| index  | Row identifier |
+| title  | Article headline |
+| text   | Full article body |
+| label  | 0 = Real, 1 = Fake |
 
+The dataset is stored in this repo via Git LFS. You will need 
+Git LFS installed to download it:
+```bash
+git lfs install
+git lfs pull
+```
+
+## Repo Structure
+fake_news_case_study/
+├── DATA/
+│   ├── WELFake_Dataset.csv   # Full dataset
+│   └── Data Appendix.pdf     # Dataset documentation
+├── SCRIPTS/
+│   ├── EDA.ipynb             # Exploratory data analysis
+│   └── Modeling.ipynb        # Clustering and classification
+├── OUTPUT/                   # Generated visualizations
+├── hook/                     # Hook document (PDF)
+├── rubric/                   # Rubric (PDF)
+├── references/               # Reference materials
+├── requirements.txt          # Python dependencies
+└── README.md
+
+## Setup Instructions
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/thomaswarren3/fake_news_case_study.git
+cd fake_news_case_study
+```
+
+**2. Pull the dataset via Git LFS**
+```bash
+git lfs install
+git lfs pull
+```
+
+**3. Create and activate a virtual environment**
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Mac/Linux
+python -m venv venv
+source venv/bin/activate
+```
+
+**4. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**5. Run the notebooks**
+
+Open `SCRIPTS/EDA.ipynb` first, then `SCRIPTS/Modeling.ipynb` in 
+Jupyter or VS Code. Run all cells top to bottom.
+
+## Case Study Materials
+- See `hook/hook.pdf` to understand the mission
+- See `rubric/rubric.pdf` for the full deliverable specifications
+- See `references/` for suggested reading before you begin
+
+## Original Dataset
+WELFake on Kaggle: https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification

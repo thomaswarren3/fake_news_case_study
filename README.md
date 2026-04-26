@@ -29,6 +29,7 @@ git lfs pull
 ```
 
 ## Repo Structure
+
 fake_news_case_study/
 ├── DATA/
 │   ├── WELFake_Dataset.csv   # Full dataset
